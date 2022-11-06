@@ -713,6 +713,7 @@ const DEFAULT_INPUTS = {
     reportAskFor: () => [new EmptyString(), new EmptyRing(), new List()],
     doBroadcastAndWait: () => [new EmptyString()],
     doWaitUntil: () => [new False()],
+    doSocketMessage: () => [new List(), new Block(),new Block()],
 };
 const DEFAULT_INPUT = {
     list: index => new EmptyString(),

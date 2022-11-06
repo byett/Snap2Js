@@ -1,3 +1,247 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function anonymous(__ENV
+) {
+class Variable {
+    constructor(name, value) {
+        this.name = name;
+        this.value = value;
+    }
+}
+
+class VariableFrame {
+    constructor(parent) {
+        this.parent = parent;
+        this.vars = {};
+    }
+
+    get(name, silent) {
+        let result = null;
+        if (this.vars[name]) {
+            result = this.vars[name];
+        } else if (this.parent) {
+            result = this.parent.get(name, silent);
+        }
+        if (result === null && !silent) throw new Error('a variable of name \''+name+'\' does not exist in this context');
+        return result;
+    }
+
+    set(name, value) {
+        this.vars[name] = new Variable(name, value);
+    }
+}
+
+class Stage {
+    constructor(name, variables, customBlocks) {
+        this.name = name;
+        this.variables = new VariableFrame(variables);
+        this.customBlocks = new VariableFrame(project.customBlocks);
+        this.isSprite = false;
+        this.variables.set('__SELF', this);
+        this.project = project;
+    }
+
+    onFlagPressed() {
+    }
+
+    onUserEventReceived (event) {
+    }
+
+    emit(event, wait) {
+        if (wait) {
+            return project.sprites.concat([project.stage])
+                .map(obj => obj.onUserEventReceived(event));
+        } else {
+            setTimeout(() => {
+                project.sprites.concat([project.stage])
+                    .forEach(obj => obj.onUserEventReceived(event));
+            }, 0);
+        }
+    }
+
+    getTimerStart() {
+        return project.timerStart;
+    }
+
+    resetTimer() {
+        project.timerStart = Date.now();
+    }
+
+    getTempo() {
+        return project.tempo;
+    }
+
+    setTempo(bpm) {
+        return project.tempo = Math.max(20, (+bpm || 0));
+    }
+}
+
+class Sprite extends Stage {
+    constructor(name, variables, customBlocks) {
+        super(name, variables, customBlocks);
+        this.clones = [];
+        this.isSprite = true;
+        this.xPosition = 0;
+        this.yPosition = 0;
+        this.direction = 90;
+        this.costume = 0;
+        this.size = 100;
+    }
+
+    clone() {
+        let clone = Object.create(this);
+        this.clones.push(clone);
+        clone.onCloneStart();
+    }
+}
+
+__ENV = __ENV || this;
+var project = {
+    variables: new VariableFrame(),
+    customBlocks: new VariableFrame(),
+    timerStart: null,
+    tempo: 60,
+    sprites: []
+};
+project.stage = new Stage(unescape('Stage'), project.variables, project.customBlocks);
+let DEFAULT_CONTEXT = new VariableFrame(project.stage.variables);
+
+var sprite;
+
+sprite = new Sprite(unescape('Sprite'), project.variables, project.customBlocks);
+sprite.xPosition = 0;
+sprite.yPosition = 0;
+sprite.direction = 90;
+sprite.draggable = true;
+sprite.rotation = 1;
+sprite.size = 100;
+sprite.costumeIdx = 0;
+project.sprites.push(sprite);
+
+
+
+
+project.stage.onFlagPressed = async function() {
+    var self = this;
+
+
+    return Promise.all([
+    ]);
+};
+
+project.stage.onUserEventReceived = function(event) {
+    var self = this;
+
+
+    return Promise.all([
+    ]);
+};
+
+project.stage.onKeyPressed = function(key) {
+    var self = this;
+
+};
+// Initialize content references
+var self = project;
+SNAP2JS_REFERENCES = [];
+project.variables.set('SNAP2JS_REFERENCES', SNAP2JS_REFERENCES);
+
+
+// for each sprite...
+var sprite;
+
+sprite = project.sprites[0];
+
+
+
+sprite.onFlagPressed = function() {
+    var self = this;
+
+    return Promise.all([
+    ]);
+};
+
+sprite.onKeyPressed = function(key) {
+    var self = this;
+
+    (async function() {
+if (key === unescape('up%20arrow')) {
+let DEFAULT_CONTEXT = new VariableFrame(self.variables);
+  __ENV.doSocketMessage.call(self, unescape('message%20and%20address'), __ENV.variable.call(self, unescape('serverMessage'), DEFAULT_CONTEXT), {    }, __ENV.variable.call(self, unescape('serverMessage'), DEFAULT_CONTEXT), DEFAULT_CONTEXT)  ;
+}
+})();
+
+
+};
+
+sprite.onUserEventReceived = function(event) {
+    var self = this;
+
+
+    return Promise.all([
+    ]);
+};
+
+sprite.onCloneStart = function(event) {
+    var self = this;
+
+};
+
+sprite.onEventReceived = function(event) {
+    var self = this;
+
+    if (event === 'clicked') {
+        // Add code for the given event...
+        // TODO
+    }
+};
+
+sprite.checkConditions = function() {
+    var self = this;
+
+    // TODO: add arbitrary hat block code here
+};
+
+
+project.timerStart = Date.now();
+__ENV.__start(project, __ENV);
+
+
+project.variables.set(unescape('message'), unescape('0'));
+project.variables.set(unescape('serverMessage'), unescape('0'));
+
+
+
+
+
+return Promise.all(project.sprites.concat(project.stage).map(sprite => sprite.onFlagPressed()));
+
+
+})(require('./src\\context\\nop'))
+},{"./src\\context\\nop":4}],2:[function(require,module,exports){
+const callRawFnWithArgs = function(fn) {
+    const inputs = Array.prototype.slice.call(arguments, 1);
+    if (inputs.length) {
+        return `${fn}.call(self, ${inputs.join(', ')}, DEFAULT_CONTEXT)`;
+    }
+    return `${fn}.call(self, DEFAULT_CONTEXT)`;
+};
+
+const callFnWithArgs = function(fn) {
+    arguments[0] = `__ENV.${fn}`;
+    return callRawFnWithArgs.apply(null, arguments);
+};
+
+const callStatementWithArgs = function() {
+    return callFnWithArgs.apply(null, arguments) + '\n';
+};
+
+module.exports = {
+    callRawFnWithArgs,
+    callFnWithArgs,
+    callStatementWithArgs,
+};
+
+},{}],3:[function(require,module,exports){
 // Generating the js code from the ast nodes (indexed by node type)
 const utils = require('../utils');
 const indent = utils.indent;
@@ -806,3 +1050,86 @@ backend.reportStageWidth = function(node) {
 };
 
 module.exports = backend;
+
+},{"../utils":5,"./javascript-helpers":2}],4:[function(require,module,exports){
+// nop everything
+const backend = require('../backend/javascript');
+const nop = () => {};
+
+var context = {};
+Object.keys(backend).forEach(key => context[key] = nop);
+
+// special cases
+context.doYield = nop;
+context.__start = nop;
+
+module.exports = context;
+
+},{"../backend/javascript":3}],5:[function(require,module,exports){
+const parseSpec = function (spec) {
+    var parts = [], word = '', i, quoted = false, c;
+    for (i = 0; i < spec.length; i += 1) {
+        c = spec[i];
+        if (c === "'") {
+            quoted = !quoted;
+        } else if (c === ' ' && !quoted) {
+            parts.push(word);
+            word = '';
+        } else {
+            word = word.concat(c);
+        }
+    }
+    parts.push(word);
+    return parts;
+};
+const inputNames = function (spec) {
+    var vNames = [],
+        parts = parseSpec(spec);
+
+    parts.forEach(function (part) {
+        if (part[0] === '%' && part.length > 1) {
+            vNames.push(part.slice(1));
+        }
+    });
+    return vNames;
+};
+
+const indent = lines => '  ' + lines.replace(/\n/g, '  ');
+const clone = obj => {
+    var newObj = {},
+        keys = Object.keys(obj);
+
+    for (var i = keys.length; i--;) {
+        newObj[keys[i]] = obj[keys[i]];
+    }
+    return newObj;
+};
+
+const sanitize = function(text) {
+    if (typeof text === 'string') {
+        return `unescape('${escape(text)}')`;
+    } else if (text instanceof Array){
+        return '[' + text.map(val => sanitize(val)).join(',') + ']';
+    }
+    return text;
+};
+
+const defer = function () {
+    const deferred = {resolve: null, reject: null};
+    deferred.promise = new Promise((resolve, reject) => {
+        deferred.resolve = resolve;
+        deferred.reject = reject;
+    });
+    return deferred;
+};
+
+module.exports = {
+    indent: indent,
+    clone: clone,
+    parseSpec: parseSpec,
+    inputNames: inputNames,
+    sanitize,
+    defer,
+};
+
+},{}]},{},[1]);

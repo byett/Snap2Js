@@ -1,0 +1,475 @@
+<project collabStartIndex="32" name="4-2-1 cleint" app="Snap! 4.0, http://snap.berkeley.edu" version="1">
+    <notes></notes>
+    <thumbnail>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAAA10dzkAAAAAXNSR0IArs4c6QAAIABJREFUeF7t3XmwZlV9N/p1hp6huxmaqRllHgUZZBIU4zx7NTEOMa+xEjNomSrfpDTGVN37h5WbmyqvmlRA4zxh1KiACCrIJIMoIkgEFEVoBoGeB3o457z1Xe2DLQLd+3T37t27P0/VqR7Ofp619mcdqr/81rCHJiYmJooXAQIECBAgQIDADiMwJADuMGPtRgkQIECAAAECVUAA9INAgAABAgQIENjBBATAHWzA3S4BAgQIECBAQAD0M0CAAAECBAgQ2MEEBMAdbMDdLgECBAgQIEBAAPQzQIAAAQIECBDYwQQEwB1swN0uAQIECBAgQEAA9DNAgAABAgQIENjBBATAHWzA3S4BAgQIECBAQAD0M0CAAAECBAgQ2MEEBMAdbMDdLgECBAgQIEBAAPQzQIAAAQIECBDYwQS2aAAcHx8vy5YtK7/+9a/Lww8/XBYtWlSWLFlSFi9eXB599NHHaCcmJurvh4aGfoc7f7+pf+f9O67flClTyqxZs8rcuXPLnDlzyi677FL23HPPss8+++xg//m6XQIECBAgMDmBLRYAV69eXcPefffdV1atWlXWrl1b8nf5dc2aNWVsbGxyPfQuAo8TyP8kJATma+rUqWXatGk1EO66665lt912K9OnTy8jIyPcCBAgQIAAgScR2OwAmKpdQl4qfr/4xS/KHXfcUWbPnl2rMjNmzKhfM2fOrP9YP766Z1S6ITA8PFzylfEZHxsrY+PjZSJfv6nUlrK+Ytv2K82Pja0rI6OjZWRk9LHm161bVyvKK1eurP+zka/8z0bu4dBDD63VwJ133rmMjv72PW33XXsECBAgQKDLApsVABMQUt27/fbby913313/Ec4/vgmAqcIkUAyChfDXvR+DwfjstNNOdbyGh4bKmtWPliWLF5UVy5aWNWtWl/UZcNsEwLF168pDD9xf9pi/X9l13p5ldMrU+j8b+bnLV5YcDH6/fPny8uCDD5b777+/HHDAAeWwww4r+++/f/fQ9YgAAQIECHRAYLMCYMLf//zP/5SHHnqo3kqCRCovqfaZguvA6G6kCwnnc+bMLiPja8tDP7+13HHdt8rChQvLrLK6jJa1ZfXasfKbBLhNbibhbt2jK8ohx59W9j3uzDJt/pFl+eo1Zd26sQ2qk+u7lmC4YsWK8sgjj9SKYCrQhx9+eNl99939LG6T0dMoAQIECHRZYNIBMNW+BL8f/OAHdZo3a69S+fPaPgQS0LN2bpe5s8tdN15R7rjya+W+H36nDK1eVvaZNVRmTxsq68a3Ve1vvWG2CE0ZKWX+oceWeSe9pEx7xqvKsvEpZVUNget+D3qwHGHBggU1BGZN4AknnFDXB6pAbx8/l3pJgAABAu0ITCoAZkNH1vz99Kc/rZs+MtWWSkv9R3to6LHqzIa/H9yO73fDJ1O+s3feuUwdKeXL/9+7yi+v/Eo5bLcp5Yjdp5Q9Zo6UGaNDZWgbTf3+zo/+UKlT0yNHnFOGzvnbsmrmnmXZykfrcoMn+/nKdHBCYP4H5bnPfW7Za6+9atj1IkCAAAECBH5TZJn47Ur/TTbJsS4/+9nPyve///261mqw83KTP8CF21wgG3Nm77xTWf7IA+XS8/7vsvYn3ypn7z+97DZzuEwdGSrDv3tCzzbtb7oydMhZZejZby9jux9cFi1bWTeAPNkrawPzM/rAAw/U6vRxxx1X5s+fv03vQeMECBAgQKBLApOqAGbdX876u/fee8shhxxSp9iynkwFcPupgCYYTZ86Wm7/wTVlwXc+XnZ56EflxL2m1spfl8LfY/+xHHBKmTjtLWV8vxPLouWragB8qgpz1gTmWKLsSj/99NPr7uCsTfUiQIAAAQIESplUAPzud79bd//ma999993u/2HN5oFf/epXtaqZzQMHH3xwmTdvXp3Kvueee+r38spU93777bfd32/uZfq0aWVkaKJc8fUvlBl3XFyetvYX5ZBdRsvIcKZ+m72G5s4vw7sdUIbm7J0EXMraR8v4I78s4wtubfZBT3H1xL4nlPFT3lQmDjq9LFqx+ikrgIOPyTrAVKlPOumkGgBzcLQXAQIECBAgMMkA+JWvfKXurEzlL2v/tvfz1nKEzde+9rXyqU99qhx99NHlzW9+cznttNPqztLc6wUXXFDv8dWvfnV5+ctfXs81nMTMead+3qZPn1bK2LpywWfOLfs/eFU5auT+Mn/2aFlfx23wGh4po8e9rIwe/4oyetApZWJ8XZlYvaKM3XpJWfOdD5SJR5eVMjHe4AOf+NIaAE9+Uxk/6LRNDoBZJ/iTn/ykBvo8JeSggw7a7H74AAIECBAg0AeBSVUAzzvvvPoIrr333rse+zKY/t1eQVLh+/rXv14DYKa0/+Zv/qaceeaZdaPLhz/84fK9732vbiT4kz/5k/KHf/iHdQNCHnm3Pb8yBTw0vq5c+Jlzy4G/vrocPfpA2XvnkWbVv+GRMjRjTpl6ztvLyMGnl4nlD5Wxu64vI4eeWcqU6WXdrZeUddd/tkysWrLZVOsD4BvL2EGnl4XLVtUjXzb2SoDP4eSDHeqpBHoRIECAAAECk6wAvv/976/hL9WyTVlXlUX5mUq98cYb66HRCVA5rDdrs1KdSZi66aabypVXXlnH5Mgjj6zHdySM5XDfHDWTBf2pvOWswcGTRRJinv70p9cjQX7+85+XO++8szzzmc+s1cmsU3z852XDStrOtGD6k+uyWSDhLmsar7766tqvP/iDPyjHHHNMrQB+/OMfr7tJc8D1qaeeWv7oj/6o3sMVV1xR7yevBIvjjz++Tg9nh/SPf/zjcvPNN9fwseH3U4XK/Vx22WW1r6kqZgo91cZsUsizky+//PJ6mHGmL3OfZ599dj3PLo88S6XyoosuKtnlGv9Ma6bfsUq/sy4u/Rq0m4pX3p+pz8efyxi74YmxcuGnzy0HPXR1OWpSAXC0DO08r0x9wf8uI/OPLWP3/KiM3XllrQgOz3taGbv7B2XNJf9vmVj+yGb/t5YAOHbyG8v4gaeVRzYxAGYsMnap1uZ/Ul7wghdsdj98AAECBAgQ6IPApCqA733ve2vgOPHEEzfpfLWlS5fWsHTJJZfUXZkJcQkvCVQJRTfccEP9SiUuZ7dlajnhL8EmgekLX/hCPaA4QSkhK4Ey/7CnCvTGN76xHvnxwx/+sIa6173udTUo/ehHPyq//OUvf+fzTj755BoEMq2bAJbgl+pQQliqffmMhMRMayfwpR+XXnppDU9ZG5iQlingb3/727UqmPCY+0k1NKH1lFNOqX1KSEtIzPdSIc3fH3vssfX3CXhZQ5nQm3vMZ8Yh7eVeE+BymHF+nz4l0D772c+uP2t5X+4rgW6PPfao4TvtvOY1r6n9HgTTXJtjTwY7YI844oja/7gNXvneyMRYueAz59UAOLkK4GgZnrNXmfqCvytDex9exn5+bRm78+oy5fhXluG9jyzj9/2krL7o/ykTy9YfFL45r/FUAE96QxlrEAAHu4ETjBMGX/nKV25OF7yXAAECBAj0RmBSAfA973lPDYCbOqWWswKvueaacv3115e3ve1tNSwleKWqlXD4H//xH7WSlQpNqooJiglARx11VK2SffKTn6wh633ve18NOgmK3/nOd8q1115b3vGOd9Rf77rrrrpJIwHt05/+dD2fMGfAbfh5OQ4kYS9r+hIgM82bKd209a1vfatW5s4444zal1QVEwTzOelnAlNCVN7z+c9/vlbbXvva19Zrzj///Fqxe/GLX1yDXT4/5+y94Q1vqO0NpsnTZqbP896E25e85CU1XKbSl4CSXaupUKa9bEhJ+Mwzb5///OfX6mDaSRsvetGLantf/vKXayDM1HRCYdod9CN9TahOZfR5z3teSQjMZw1eMxMAh8bLhZ/5yHYTAMdOfEMZO+i08sjSlbUKurFXAmDcct/xfdWrXrWxt/g+AQIECBDYIQQmFQDf/e53N6oAJtTceuut5Zvf/GadHk24SvUr05MJeQkuCYipniX8JCClQpiKTQJfAmEqgwl7CYSZIk24SRUulbVbbrmlVusSjlJJ++hHP1rfk5Cw4eclsJ1zzjk1SCWo5c8JhelTqnrpY0JbAmWmkFOpTNUwU8EJEQl1CW7/9m//VqeX8/0EuLTzjGc8o/zlX/5lDVqpAOZecwRJ+pvKZdpNW/m7rDXMFHFCbaqQCa2ppiawfOMb36hBOdXLHHNy1lln1WnnBOUEvoS99CH9TwhOxTBVzwTUBN84Dp7xm5/g+CV05/PzGYPn564PgBPlos9ufwHw4SUrNjkApkqbUJwAmE08XgQIECBAgMBmrAHMFGTW79XNBDn64yleCR0Jd5nSzK+psGXaNr9PCEvoyZmCWc+XillCUwJffp+qWHbopqKVgJWjZzIdnOnOBLXBOrxnPetZNRylrQTAVAQf/3kHHnhgDV0f+chHaoD44z/+47ozNGEsU7MJZ3/1V39Vw2M+O5W5v/iLv6jrDxM68+dM1372s5+tf5dwln4mBCZ4JvwlFOYJKalSJqTlukxNJ/CmAjX4c76XYHndddfVEJup8Ez9pmKXae7cZwJp+puAmPD2X//1XzXEJJTm2rjcdttt5U//9E/rdf/93/9djRM0Uw1Nv1JpTcU14TVtJ3xnTVxdRzk8CIDXTHIKeKQM7bR7mfr8d5WR/U8o4/fdVtbdeUUZPfYlZXiX/crYXdeWNd/+/8vEis1fAzg+/4Sy7qTXl7EDTi0PbWIAzL3mnjMdnvtPRdiLAAECBAgQmGQAPPfcc2uASLjI1OOGu4Cf6FFvqQAmsCRE5R/jhJRMh+Z9OXIlmy8S6BJiEvoS9hKIUh1LmLrwwgvrmreEsVQHE4byD3sC0sc+9rEa4hKuEo5S8UkFbnCm34afl98n+GVjRwJWKmcJSqkgZn1d3vN3f/d3tbKWCl8CVNY7JmTle+lfpl/z/Wy0yOclAKZvWcuX/ibYpV8JubFIPxNYMxX90pe+tAbWfC/hLwEl6w6zzi/nDsYg1b8EuDxXOVXAfF7uK5XM3FcqWYOnWuT7maL+sz/7s5Jwm4pogm8CZKamY51245n20o+8PwFw1qwEwKFy0ec+Up5W1wA+2HwX8NBwGZo2q0w54y1l5IjnlKHhKWXswdvL8B6H1tC37gf/VcZu/249FmZzX+Pzjy9rT3x9XQP40OLl1WVjjxrMPSdQ52cpvqmcehEgQIAAAQKTDIBf+tKXql0CXP5h3dg5gAllCT6p9CX4JYTkH+M3velN5TnPeU4NOpnezFq/hK6Esqy1y7RpAlRCUsJWpmcT4FIVTABIkEwoyo7dVAATdhKI8nlZP5e1eht+XtbCpUKY6d5soHjFK15RQ1vOikvwynvf+c531nV1mWJOgHj7299e208ATKjKtHSmjFNtSzCNQdpPNTBTvQlZuc+8P+vP8kqAy1emYz/xiU+Uiy++uAa1BLTs8H3rW99af027//zP/1w/IxXFTIPnlaCa0HfVVVeVD3zgA3U6OhXF3G82vLzlLW+pU7y579xzdlTHJuE8n50KYCqTcR+8EgDzyLeLPvvR8rSHJxkAf/NhI4edXUaPeWEZOeSMUoZHysSyR8q6Wy4qa688d4v9N/bbAHhq+fWi9QFwY6/8j0fCfQJ1AnLWrXoRIECAAAECkwyAmS7N9G2C2GDK9qkwE7oSlAY7ZhPKEn4SSlKNynRpqnqD76falSm7wXq/BJdU3xLABhW1hKC8N9ekwpOwk6peAlHWfKU6lCpl3jf4vIS+bPhIeEjbCVW5NtPP+bxU81I9yzWpNKYKN2hz8P2sNUz1L5+R76eN9DX3kzYztZ1+pM20kb/Lr/lzAkmqiflz3pu/G1yX9+Te0s6GR93ELp+dcJhwl/vN5pH0K8fZZONKdkJnajp9ylf6GMtcm/tPuwmjCYWD106zZpVpo8Plos9tfgAsU2aUoWkzS36tr/GxUtas3CLn/w36+1gAPODU8uCiZfXnZWOvjG2m2DP1mxAYFy8CBAgQIEBgkgEwR6ik2pRQknVv2eW6sSpgvp+g9Pg1g6myJUwmzOV7gyBVc8T4eA1iCY95f4Jj/lFPoEkoTLga7NDN9/JZqRDmfQl7CWf5/mCNYt6T9w++n7YSvPJ3eaX9QVBLfwZ9SXv58+Cz0sb6adRZtV+Dqch8/uAZtbk2738swIyP17by3rRTz+H7zfOTc02+l3byeXnv4Ny+tJP+JtimApjp51Rd89n5rFRKEwgTxDPNnvbz/tz/4L4Hm1gG95n2agCcMlK++cWPl4N+fVU5avj+5lPALf4XNHHgqWXstD8r6/Y6utz/0KL6Px9P9cq9ppIak2w2ys/p489CbLH7miJAgAABAp0SmNQu4FRfMiWaNWepVmUNXEJgwsoTrQEcBBHfn7xPKoOpEKb6mkCXoJgqYo6xyXRwQmLWWCYADs77G4zFE/lnF/C0KcPl+5d/o+x3z6XlkLW/KLvPHG72JJA2f5QPOauMn/XXZdVO88v9Dy2sFcAnu7/4JPhluUGm0bPJJlP9XgQIECBAgMB6gUkFwLwx/8DmqJSsN8t6tUxJqrBs3R+rwXR3NnWkmjp4Zdo3YSdfm/rKZ00ZGS6L77ur7HXXRWXPhT8qs8ZXbpHn9m5qHzb5ukwtH35OWXfGn5eFYzPLw4uWPFa13fAz8j8Y+Up1MBttEpoHZzVuyhNrNrk/LiRAgAABAtu5wKQDYKY7s7kjR6Zk+jLVqAQTr60nkIpXQna+Njx6JxW/jMeGmzw21ou8f8roaJm3265l7sp7ysxffLcM3XpRmXh0afdC4KFnl4kjX1RW7//MsuCRpWXZ8hW1Cvr4V8Jfpn5z7E4CXzbnZO1fwvLGjiramJfvEyBAgACBPglMOgAGIcEvGyJyVEsqLlnTlkrgYANCn6D6eC8Zr1k5zmfWlDJ7fFmZtvy+MjpcysjwcBkafuqzHdvwmBifqFW8dTvtWVZN260sGZtSFi1ZVtasXVsrfRu+cl02umQTTjYEZcd1wt/jjylqo9/aIECAAAECXRfYrACYf4RTicl6wJy3ljVq+XOqgYOnZCRkpBqz4YaHzUF5orPfnuzzmly7qX1q8plNrt1W7aePGa9saJk+bVoZnTLl9yqMm9q3LX1dfr4S7AabWLLpJf/TkfMTU+3Mr4PqZ9Y+Zio8P2dZ95djdQbnJW7pfvk8AgQIECCwvQtsVgDc8OZzxEgOQM6jyLL7NqEi68wGu1qfag3WhpsUNga6qddu6nVpb2tcuzU+s0lfm7af6/M1eFTcU4XqfO/xFbjHX9+0/U35zMH9J/gNQmH6m9+nP9mIlONwcixQqtBeBAgQIECAwBMLbLEAODhiJWfoZTdqNiTkGI7BVyo5XgS2hED+ZyIV5qw5zdNocn5jqn057HlwfqQ1f1tC2mcQIECAQF8FtlgADFBCYAJfFuFnTWB2Y2baLtNzqdoMXoPq0eP/kR4cE7Mh9pP93YbVsA0/d1M/0/t/W/l8Ir/BYd05b3BwbmF+TXV3W4er9C0hcHBuZH5NIEwF0IsAAQIECBDYuMAWC4A5xDiBL49Ty07MTMvl7/Jr1m012aG68W67YmsLJGQNpu8TAhO4csB0pldTcdvwGJqt3RefT4AAAQIECGxZgc0OgIONIFkDmB3Bd9xxx2NHwgwqR6kabfhkii17C93/tFTMNtwEMzE+XtfaDQ5sLuV3d7S2fUfj4xO1fyOjo4+t7UtwT5AffOXIn3zleboHH3xwPfx78GSUbV0RbNtLewQIECBAYHsX2KwAmPCX6t7tt99eH1WWil8Ohc4GkMHZawkWgw0G2zvWZPuf6cl6NM7ISMmjNlYsX1aWLV5cli1d8psQuO0CYE5TWbVyRZm5085l730PKKseffSxYDrYEDII+dllmzWe+XOerJHHq2Wst9QO78n6eh8BAgQIECDQTGCzAmDCX54GMngCxWAdVqp9ngqyfo1dqp+zZswoa5cvLA/ccXO5/cYrysqli8vQ2JoypazNo1iajdhWuDp93OfIZ5SDTntJWT06q6x6dP1RKxu+Egbzd3luc6b6B4d/n3jiiaaDt8KY+EgCBAgQILA1BSYdAFPtS/D7wQ9+UKtb2Y2ZapDXbwUSgrNerqxZUe79yQ3llku/WB659aoybXxVmT1tuH4NbePzltP87Dlzyp6HHV/2POVlZfywc8rS1RO1EvhkR71kY0/GPs/jPemkk2rV17ErfvIJECBAgMD2IzCpAJgNHVnzlyeAZNPH/vvvX58AkteGhx8/0UHIO9L3s4lijz3mlV//7Mfllm99sdx28afLCXtNLQfMGSm7zhgu00aGMiO8zV/1EXPTZpThPQ8vQ6/+l7K47FRWrFr1hGcCDsYvT93I2Kd6ePTRR9djWEwFb/Oh1AECBAgQILBJApMKgNkMkKd/fP/736+P3Er1z67Q3/ceBMDrvvyRcu9VXyq7Lb+rHDNvSpkzfbhMTfjrQvpLaF+f3MvQ3H3L8BvOK0tG55YVK9c/gePJXvleKoC33XZbDYBZD1irnV4ECBAgQIBA5wUmFQCz7i/n/N17773lkEMOqY8RG1R/dqQK38YqnNn0scvcOeXaz3+gLL3x6+XwaYvKAXNGy/TRodKBR+3+3g/n0Nz5ZfTNnyiLyk5l2Yr1Zzc+fhp4cM/5+ywDyM7vOXPm1EOY87PgRYAAAQIECHRfYFIB8Lvf/W7dBJCvfffdtx7x4vX7AgnFO8+cXq7/wgfK2C3fKCfPXVl2mTFSRoZ/U3VrgDa0025leI9Dy9CcvUsZHi1l7aoyseyhMnbvzaWs3TJPWUkAnPK/PlUeGZ9Zli5b/nsbQR7f3SwFyFrAbAzJFHA2hHgRIECAAAEC3ReYVAD8yle+Unf5pvKXtX+Z6vT6fYFM8c6YOqVcf/4Hy8hPLynP2XN1mT6Zqd+RKWXkaaeWKae/uYzsf2Ipo1PLxKrFZXzBrWXNN/+5jC+8p5SxJ5+u3dSxqRXABMCxGWXJ0mUbPbw7ATA7gvPov7333rucddZZm9qU6wgQIECAAIFtKDCpAHjeeefVab/8o5/Hb1n8/8QjODw8VGZNn1oD4OhPLynn7LlmUmv/hvc6vIwe99Iy+oz/q4zff1uZWP5wGdp5zzK8xyFl3U3/Xdb9+MIy/uAdm/1jNAiAD6+bXgPgU60BTGODcyCzDjD/I/DSl750s/vgAwgQIECAAIGtLzCpAPj+97+/hr8s/t+U6d88GziHRWfjSI4LybRhfs2asYSMrCPL66ijjiqnnHJK/d6CBQvKjTfeWN+XDSZHHnlkOfXUU2vwzCaUm266qVx55ZX1fTmG5Nhjjy0nn3xyrUzeeuut5eabb37sc3NUyfHHH1/mzZtX/z7vTdUqlctMYZ922mnlaU97Wt3B/POf/7x873vfq2scs7klU5t55X6z0eGXv/xlufbaa+vB19kBe/bZZ5fDDz+87LLLLr83WgmAO82YVgPglFoBnFwAHDnomWX0hFeVkSOfW8b+59tlfOGvyvC8p5WRw59dxm6/oqy97rNl/J6bNvunZRAAH0oAXLJ0owEwDeZ8wJ/85Cd1XJ773OfWqrAXAQIECBAg0G2BSQXA9773vfWRYFnztSmPAfvxj39cw9qPfvSjGrYWLlxYpw4ToBKqEsZyrExCxJvf/OZaWbrllltq0EpIS8hMwDrooIPquXN53NxVV11Vw1x2Ie+33341ACbkPfLII+VrX/taPaA6QTIVyoTK4447rsydO7eGu3wvT7RYuXJlDaOvec1ryjOf+cz62LMLLrig/OpXvyp5/m3CX3a6ZrNDQt7pp59evvnNb9bv5+/S/3zmGWecUcPs46fCh4eG1q8B/OJmBsBDzyqjJ7yyjBxyZhm75aIy/vAvyvCeh5aRY15Uxu66tqy75pNl7O4bN/snbRAAf71mWlm8ZMlG1wAOGoxngt+ZZ55ZQ7MXAQIECBAg0G2BSQXA97znPTUAJoxtyisBMMErVbN/+qd/qoHuiiuuKN/+9rfLP/zDP9TjQ2644YZy6aWXlr/+678uqRj+8Ic/rOHsrW99a3n00Ufr9xP43va2t9XjZxIC8zza173udfX9CWx55X1f+MIXahh7wxveUCt8CYFpM7ta89l5hm3Wr6Ui+cEPfrC87GUvq9XFtPeBD3ygvPjFL67TmQmdme5ONTDPv03IzPef9axn1TCY6teHP/zh+vuEzATYfO7glQrgnFkzyvVf/NDmVQDbDIB/+sny4JqpZdHiZgEwT4GJiwC4Kf9FuIYAAQIECGxbgUkFwHe/+92NKoCp5mU6NwHrfe97X8mTJLKTOE8RSSBMxS+B8PLLLy/vfOc767TvhRdeWC677LIaqvL9hLZM06b6mED4jW98o3zmM5+p4S5BMAHuJS95SZ0uzmen4piQmCCYquM555xTK4R33XVXDYhpO9PPmU5+17veVV74whfW35977rnl5S9/eb0+08mpCOY9WeOW0Jvwm12vg3MP855ULV/96lfXkJgDkgchcGR4uMzZafsKgCODALhocaMKYAJgNoEIgNv2P2itEyBAgACBTRGYVADMGsCErgSeTLNubBo4a/ISuDL1+4//+I/11wS+VAYTADOdmtB29dVX1wCYKl2mf7Me73nPe14NgQlcqfQlxCWAJZQlKCYY5nMS9BJADj300Dq9m69ly5aVBx54oH5eKoGp1H3961+v78nUbY6xyXTx61//+vLsZz+7hrdU+FIRTABM8EzITH9zr1mH+K//+q91OviYY46p/cor09CZLk4f0u7gOboJgHNnzyo3nP+hMuX2zVgDeMCJ66eAj3lhXfM3sXhBGdrtgDJy8Bl1TeDaGz5fxu/98aaM91NekyngBMAHVk8pixYt3qQ1gAm7Gd8EvwTwQSV2szvjAwgQIECAAIGtJjCpAJgqWda/5R/9BKkNdwE/0UHQCQimNRhgAAAgAElEQVSZmk3ASgUv6/QSAPP3qQimopcAeM0115S//du/rcEjGwuytiwbQ9JWKnBZA5hfswYvmzFSUUyYy3WpBGYTQjaE5M8JfulLfk2AG6wf/Pd///fa5zy+LoHt4osvriEz69dy/cc//vEaNhPoUtXKhpFM9Z5wwgl1rd/nPve5GnrTTu4/v+azsgYuawqztnFQAawHQc/ZabMD4PAu+5aRo55XRk/+o1JWrygTq1eUoakzS5k6o6y79lNl3Z1X11C4ua/HAuCjo+WRhYue8iDotJWAnLG78847yz777GMX8OYOgPcTIECAAIGWBCYVAL/0pS/V7iX4ZWftxs4BTKUuoSyVu3e84x11w8d1111X1+Cl4pfglIpfqoR//ud/Xit9ec5wqnWpCmZzRoJgKnNZh5dQluniXJ/QlqdQpPqUSl5C4ac+9an6/QTOvDI9+4pXvKKGwP/8z/+sU8uZuk1oSXDMFHE2gSTMZZNH7i8bU7KxY6+99qpTwVnvmPYztZwQmPWICab5++c///m/8xSMwdMzEgB3nbNzuSFrADejAlit9z22TDnxtWXk4NNLSfhb/nAZu/uHZc1lHywTKxZukR+XQQC8f9VIDYAbOwYmwTjGCfQJwc95znO2SD98CAECBAgQILB1BSYVABOuEuZS7crU6sYCYIJEqmoJWAlUCYB5bzZmZAdvKnQJZHllnV0CX0JFrkm1LlW+vD+Vt1TXUv1L5SnVwEw55vsJY/l9glumfhPaUsFLQMyvuSZTzXlvPit/l+vz/fyaz80mlX/5l3+p/cyGhuwcTgjNFHKmfBMkczxNAl7ekzbzWfl9QmyqjWkjwSivBMDdd5mzRQJgDn8emrZzKVOm1+f2lvGxUtatLhOrlqz//RZ41QD45k+U+1aNlIcfWbjRABizjGV+zbhlI4wXAQIECBAg0H2BSQXATPklSOVYlxzjkiraxkJgAlimSXNdwltCQwJgvhKa8udUFBOoEhizPi9BKyErYW4wtZz1dQmfg2CX9wzWIOYzEh7zyuduuB4toSyfm7bz94Pwl2vTTj43YSYVwEw/59pUNxNEB5tIEgLvu+++em3aHdzz4Lm4CYHpw6ACuH4TyMxy01fPK9N+9u3ynHmrJnUQdGs/RnP2KUNv/Gh5YM20snDR4jouT/aKZyxTqU0FNjbZpONFgAABAgQIdF9gUgEwZ+Nl+jZHu6SSlg0hCYEJPk+0BnAQ0Lr+/YS+VBATbFPNS2jNUTCZ4k01MIEvFcAE0ITAwb0+2f0lAM6cNlp+efXXyqxfXF5OmrqgTMmj4Lr4c5HnC+96QBl/7QfLg6unlIWLlzwWwp/o/hIOU7nNETmZBs8U/WBTTBdvT58IECBAgACB3wpMKgDm7amMZV1f1uNlyjTTsanU9eGVp36k+pcp50GFMNW9VAizxnDDs/6e6n4zUzt9ymgZv++2svO915T5v76ujIytKkMTE91iGh4tQ7N2KWWf48q65/7vsmD5+FOeA5jqX8JfdjxnXWV2ZsfMiwABAgQIENg+BCYdABOCsm7vkksuqZWi2bNnP+Hj0LYPht/tZSp9g2nnwXdSvcw9bzjFu7F7y2fMmTO77DptqOy85Gdl6h2XlvE7rihlzcqNvbXV7w/N3acMHXxmmTj2FWXZTvuV+x5aWJ+AMpjKfnxn8r2E4VRMX/WqV/Uq/LcKrzECBAgQILCNBCYdANPfBL88xzfrwDIVmHVxqQSmcraxNYHb6H5bbTZTp5lG3m3OzmXO1IkyY/UjZWjp/WXa6HAZGR1ttS9P1NjE+ERZvfrRMjYyo4zNmldWzdqrPLRkRVm+YuXvbQBJ8M20byq/WfuXKf/skn7605/u7L9tPpI6QIAAAQIEmglsVgBMhShVoKwHzKHNWTeXP6camLWBqYAlFGZDxoZnBTbr4u9eveEaw419TpNrN/ZZg+83+czBtdn8kq9sPIlJQmEXAvLgHL/xsbG6pvHR1atrVTdhL9O8+bvB77O5JpW/3FOO6cnGjxyOnSDYl6n/Tf0ZcB0BAgQIENjeBTYrAG5485kSzMHOOcw5O3cTAhNy8pXAkxD4ZK8NNxlsDHRTr93U69Le1rh2a3xmk75ubvsJf6n4DUJgjtbJ5pcciJ2vHOfjRYAAAQIECGyfAlssAA6OYMnGgOykzWaJbBQYfGXa0Gv7EchxPAnxqfblK1P72e2dcxsT8LtQwdx+NPWUAAECBAh0S2CLBcDcVqYUsy4w1aLsmk3oSxUp04eD5+N26/b15skEEvAyZZ0gmK+EvnxlfeeWms6nT4AAAQIECGwbgS0aALfNLWiVAAECBAgQIECgiYAA2ETLtQQIECBAgACBHggIgD0YRLdAgAABAgQIEGgiIAA20XItAQIECBAgQKAHAgJgDwbRLRAgQIAAAQIEmggIgE20XEuAAAECBAgQ6IGAANiDQXQLBAgQIECAAIEmAgJgEy3XEiBAgAABAgR6ICAA9mAQ3QIBAgQIECBAoImAANhEy7UECBAgQIAAgR4ICIA9GES3QIAAAQIECBBoIiAANtFyLQECBAgQIECgBwICYA8G0S0QIECAAAECBJoICIBNtFxLgAABAgQIEOiBgADYg0F0CwQIECBAgACBJgICYBMt1xIgQIAAAQIEeiAgAPZgEN0CAQIECBAgQKCJgADYRMu1BAgQIECAAIEeCAiAPRhEt0CAAAECBAgQaCIgADbRci0BAgQIECBAoAcCAmAPBtEtECBAgAABAgSaCAiATbRcS4AAAQIECBDogYAA2INBdAsECBAgQIAAgSYCAmATLdcSIECAAAECBHogIAD2YBDdAgECBAgQIECgiYAA2ETLtQQIECBAgACBHggIgD0YRLdAgAABAgQIEGgiIAA20XItAQIECBAgQKAHAgJgDwbRLRAgQIAAAQIEmggIgE20XEuAAAECBAgQ6IGAANiDQXQLBAgQIECAAIEmAgJgEy3XEiBAgAABAgR6ICAA9mAQ3QIBAgQIECBAoImAANhEy7UECBAgQIAAgR4ICIA9GES3QIAAAQIECBBoIiAANtFyLQECBAgQIECgBwICYA8G0S0QIECAAAECBJoICIBNtFxLgAABAgQIEOiBgADYg0F0CwQIECBAgACBJgICYBMt1xIgQIAAAQIEeiAgAPZgEN0CAQIECBAgQKCJgADYRMu1BAgQIECAAIEeCAiAPRhEt0CAAAECBAgQaCIgADbRci0BAgQIECBAoAcCAmAPBtEtECBAgAABAgSaCAiATbRcS4AAAQIECBDogYAA2INBdAsECBAgQIAAgSYCAmATLdcSIECAAAECBHogIAD2YBDdAgECBAgQIECgiYAA2ETLtQQIECBAgACBHggIgD0YRLdAgAABAgQIEGgiIAA20XItAQIECBAgQKAHAgJgDwbRLRAgQIAAAQIEmggIgE20XEuAAAECBAgQ6IGAANiDQXQLBAgQIECAAIEmAgJgEy3XEiBAgAABAgR6ICAA9mAQ3QIBAgQIECBAoImAANhEy7UECBAgQIAAgR4ICIA9GES3QIAAAQIECBBoIiAANtFyLQECBAgQIECgBwICYA8G0S0QIECAAAECBJoICIBNtFxLgAABAgQIEOiBgADYg0F0CwQIECBAgACBJgICYBMt1xIgQIAAAQIEeiAgAPZgEN0CAQIECBAgQKCJgADYRMu1BAgQIECAAIEeCAiAPRhEt0CAAAECBAgQaCIgADbRci0BAgQIECBAoAcCAmAPBtEtECBAgAABAgSaCAiATbRcS4AAAQIECBDogYAA2INBdAsECBAgQIAAgSYCAmATLdcSIECAAAECBHogIAD2YBDdAgECBAgQIECgiYAA2ETLtQQIECBAgACBHggIgD0YRLdAgAABAgQIEGgiIAA20XItAQIECBAgQKAHAgJgDwbRLRAgQIAAAQIEmggIgE20XEuAAAECBAgQ6IGAANiDQXQLBAgQIECAAIEmAgJgEy3XEiBAgAABAgR6ICAA9mAQ3QIBAgQIECBAoImAANhEy7UECBAgQIAAgR4ICIA9GES3QIAAAQIECBBoIiAANtFyLQECBAgQIECgBwICYA8G0S0QIECAAAECBJoICIBNtFxLgAABAgQIEOiBgADYg0F0CwQIECBAgACBJgICYBMt1xIgQIAAAQIEeiAgAPZgEN0CAQIECBAgQKCJgADYRMu1BAgQIECAAIEeCAiAPRhEt0CAAAECBAgQaCIgADbRci0BAgQIECBAoAcCAmAPBtEtECBAgAABAgSaCAiATbRcS4AAAQIECBDogYAA2INBdAsECBAgQIAAgSYCAmATLdcSIECAAAECBHogIAD2YBDdAgECBAgQIECgiYAA2ETLtQQIECBAgACBHggIgD0YRLdAgAABAgQIEGgiIAA20XItAQIECBAgQKAHAgJgDwbRLRAgQIAAAQIEmggIgE20XEuAAAECBAgQ6IGAANiDQXQLBAgQIECAAIEmAgJgEy3XEiBAgAABAgR6ICAA9mAQ3QIBAgQIECBAoImAANhEy7UECBAgQIAAgR4ICIA9GES3QIAAAQIECBBoIiAANtFyLQECBAgQIECgBwICYA8G0S0QIECAAAECBJoICIBNtFxLgAABAgQIEOiBgADYg0F0CwQIECBAgACBJgICYBMt1xIgQIAAAQIEeiAgAPZgEN0CAQIECBAgQKCJgADYRMu1BAgQIECAAIEeCAiAPRhEt0CAAAECBAgQaCIgADbRci0BAgQIECBAoAcCAmAPBtEtECBAgAABAgSaCAiATbRcS4AAAQIECBDogYAA2INBdAsECBAgQIAAgSYCAmATLdcSIECAAAECBHogIAD2YBDdAgECBAgQIECgiYAA2ETLtQQIECBAgACBHggIgD0YRLdAgAABAgQIEGgiIAA20XItAQIECBAgQKAHAgJgDwbRLRAgQIAAAQIEmggIgE20XEuAAAECBAgQ6IGAANiDQXQLBAgQIECAAIEmAgJgEy3XEiBAgAABAgR6ICAA9mAQ3QIBAgQIECBAoImAANhEy7UECBAgQIAAgR4ICIA9GES3QIAAAQIECBBoIiAANtFyLQECBAgQIECgBwICYA8G0S0QIECAAAECBJoICIBNtFxLgAABAgQIEOiBgADYg0F0CwQIECBAgACBJgICYBMt1xIgQIAAAQIEeiAgAPZgEN0CAQIECBAgQKCJgADYRMu1BAgQIECAAIEeCAiAPRhEt0CAAAECBAgQaCIgADbRci0BAgQIECBAoAcCAmAPBtEtECBAgAABAgSaCAiATbRcS4AAAQIECBDogYAA2INBdAsECBAgQIAAgSYCAmATLdcSIECAAAECBHogIAD2YBDdAgECBAgQIECgiYAA2ETLtQQIECBAgACBHggIgD0YRLdAgAABAgQIEGgiIAA20XItAQIECBAgQKAHAgJgDwbRLRAgQIAAAQIEmggIgE20XEuAAAECBAgQ6IGAANiDQXQLBAgQIECAAIEmAgJgEy3XEiBAgAABAgR6ICAA9mAQ3QIBAgQIECBAoImAANhEy7UECBAgQIAAgR4ICIA9GES3QIAAAQIECBBoIiAANtFyLQECBAgQIECgBwICYA8G0S0QIECAAAECBJoICIBNtFxLgEBjgTVr1tT3TJ06tfF7vYEAAQIEto6AALh1XH0qAQK/EbjtttvK0NBQOfLII5kQIECAQEcEBMCODIRuEOijwOWXX16uvfba8sADD5R58+aVPfbYoxxwwAH1a9999y2zZs0qw8PDfbx190SAAIFOCwiA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</thumbnail>
+    <stage name="Stage" width="480" height="360" collabId="item_-1_1" costume="0" tempo="60" threadsafe="false" lines="round" ternary="false" codify="false" inheritance="false" sublistIDs="false" scheduled="false" id="1">
+        <pentrails>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAFoCAYAAACPNyggAAAAAXNSR0IArs4c6QAADoVJREFUeF7t1cEJAAAIxDDdf2m3sJ+4wEEQuuMIECBAgACBd4F9XzRIgAABAgQIjAB7AgIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECAiwHyBAgAABAoGAAAfoJgkQIECAgAD7AQIECBAgEAgIcIBukgABAgQICLAfIECAAAECgYAAB+gmCRAgQICAAPsBAgQIECAQCAhwgG6SAAECBAgIsB8gQIAAAQKBgAAH6CYJECBAgIAA+wECBAgQIBAICHCAbpIAAQIECByxcQFpoRMBzwAAAABJRU5ErkJggg==</pentrails>
+        <costumes>
+            <list struct="atomic" id="2"></list>
+        </costumes>
+        <sounds>
+            <list struct="atomic" id="3"></list>
+        </sounds>
+        <variables></variables>
+        <blocks></blocks>
+        <scripts></scripts>
+        <sprites>
+            <sprite name="Sprite" collabId="item_-1" idx="1" x="0" y="0" heading="90" scale="1" volume="100" pan="0" rotation="1" draggable="true" costume="0" color="80,80,80,1" pen="tip" id="11">
+                <costumes>
+                    <list struct="atomic" id="12"></list>
+                </costumes>
+                <sounds>
+                    <list struct="atomic" id="13"></list>
+                </sounds>
+                <blocks></blocks>
+                <variables></variables>
+                <scripts>
+                    <script x="197" y="42">
+                        <block collabId="item_6" s="receiveSocketMessage">
+                            <l>message and address</l>
+                            <l>message</l>
+                            <l>address</l>
+                        </block>
+                        <block collabId="item_8" s="doSetVar">
+                            <l>serverMessage</l>
+                            <block collabId="item_14" var="message" />
+                        </block>
+                        <block collabId="item_15" s="doSetVar">
+                            <l>serverMessage</l>
+                            <block collabId="item_17" var="message" />
+                        </block>
+                        <block collabId="item_18" s="doSayFor">
+                            <block collabId="item_19" var="message" />
+                            <l>2</l>
+                        </block>
+                    </script>
+                    <script x="200" y="178">
+                        <block collabId="item_20" s="receiveKey">
+                            <l>
+                                <option>up arrow</option>
+                            </l>
+                        </block>
+                        <block collabId="item_27" s="doSocketMessage">
+                            <l>message and address</l>
+                            <block collabId="item_29" var="serverMessage" />
+                            <l></l>
+                            <block collabId="item_31" var="serverMessage" />
+                        </block>
+                    </script>
+                    <script x="200" y="252">
+                        <block collabId="item_0" s="getJSFromRPCStruct">
+                            <l>PublicRoles</l>
+                            <l>getPublicRoleId</l>
+                        </block>
+                    </script>
+                </scripts>
+                <history>
+                    <undo-queue id="item_-1/scripts" undo-count="0">
+                        <event id="1" />
+                        <event id="2" />
+                        <event id="3" />
+                        <event id="5" />
+                        <event id="6" />
+                        <event id="7" />
+                        <event id="8" />
+                        <event id="9" />
+                        <event id="11" />
+                        <event id="12" />
+                        <event id="13" />
+                        <event id="15" />
+                        <event id="16" />
+                        <event id="17" />
+                        <event id="18" />
+                        <event id="19" />
+                        <event id="20" />
+                        <event id="21" />
+                        <event id="22" />
+                        <event id="23" />
+                        <event id="24" />
+                        <event id="25" />
+                        <event id="26" />
+                        <event id="27" />
+                        <event id="28" />
+                        <event id="29" />
+                        <event id="30" />
+                        <event id="31" />
+                        <event id="32" />
+                        <event id="33" />
+                        <event id="34" />
+                    </undo-queue>
+                </history>
+            </sprite>
+            <watcher var="serverMessage" style="normal" x="10" y="10" color="243,118,29" />
+            <watcher var="message" style="normal" x="10" y="31.000001999999995" color="243,118,29" />
+        </sprites>
+    </stage>
+    <hidden></hidden>
+    <headers></headers>
+    <code></code>
+    <blocks></blocks>
+    <variables>
+        <variable name="serverMessage">
+            <l>0</l>
+        </variable>
+        <variable name="message">
+            <l>0</l>
+        </variable>
+    </variables>
+    <history></history>
+    <replay>
+        <event id="1" type="selectTab" replayType="0" time="1647958224825" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>room</arg>
+            <arg>scripts</arg>
+        </event>
+        <event id="1" type="selectTab" replayType="0" time="1647958303258" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>scripts</arg>
+            <arg>room</arg>
+        </event>
+        <event id="1" type="addBlock" replayType="0" time="1647958322209" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_0" s="getJSFromRPCStruct">&lt;l>CloudVariables&lt;/l>&lt;l>&lt;/l>&lt;/block>&lt;/script></arg>
+            <arg>item_-1</arg>
+            <arg>235</arg>
+            <arg>185</arg>
+            <arg>
+                <_0>item_0</_0>
+            </arg>
+        </event>
+        <event id="2" type="setField" replayType="0" time="1647958373610" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_0/0/</arg>
+            <arg>PublicRoles</arg>
+            <arg>CloudVariables</arg>
+        </event>
+        <event id="3" type="setField" replayType="0" time="1647958377731" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_0/1/</arg>
+            <arg>getPublicRoleId</arg>
+            <arg></arg>
+        </event>
+        <event id="4" type="addMessageType" replayType="0" time="1647958503042" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>message and address</arg>
+            <arg>
+                <_0>message</_0>
+                <_1>address</_1>
+            </arg>
+        </event>
+        <event id="5" type="selectTab" replayType="0" time="1647958528154" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>room</arg>
+            <arg>scripts</arg>
+        </event>
+        <event id="5" type="selectTab" replayType="0" time="1647958546194" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>scripts</arg>
+            <arg>room</arg>
+        </event>
+        <event id="5" type="setBlockPosition" replayType="0" time="1647958548632" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_0</arg>
+            <arg>171</arg>
+            <arg>136</arg>
+            <arg>
+                <_0>item_0</_0>
+                <_1>235</_1>
+                <_2>185</_2>
+            </arg>
+        </event>
+        <event id="6" type="selectTab" replayType="0" time="1647958556279" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>room</arg>
+            <arg>scripts</arg>
+        </event>
+        <event id="6" type="selectTab" replayType="0" time="1647958981831" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>scripts</arg>
+            <arg>room</arg>
+        </event>
+        <event id="6" type="startScript" replayType="0" time="1647958982752" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>item_0</arg>
+            <arg>true</arg>
+        </event>
+        <event id="6" type="startScript" replayType="0" time="1647958985824" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>item_0</arg>
+            <arg>true</arg>
+        </event>
+        <event id="6" type="startScript" replayType="0" time="1647958994176" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>item_0</arg>
+            <arg>true</arg>
+        </event>
+        <event id="6" type="startScript" replayType="0" time="1647959007064" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>item_0</arg>
+            <arg>true</arg>
+        </event>
+        <event id="6" type="setBlockPosition" replayType="0" time="1647959019488" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_0</arg>
+            <arg>92</arg>
+            <arg>365</arg>
+            <arg>
+                <_0>item_0</_0>
+                <_1>171</_1>
+                <_2>136</_2>
+            </arg>
+        </event>
+        <event id="7" type="addBlock" replayType="0" time="1647959094398" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_6" s="receiveSocketMessage">&lt;l>&lt;/l>&lt;/block>&lt;/script></arg>
+            <arg>item_-1</arg>
+            <arg>197</arg>
+            <arg>42</arg>
+            <arg>
+                <_0>item_6</_0>
+            </arg>
+        </event>
+        <event id="8" type="setField" replayType="0" time="1647959097383" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_6/0/</arg>
+            <arg>message and address</arg>
+            <arg></arg>
+        </event>
+        <event id="9" type="moveBlock" replayType="0" time="1647959104383" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_8" s="doSetVar">&lt;l>&lt;/l>&lt;l>0&lt;/l>&lt;/block>&lt;/script></arg>
+            <arg>
+                <point>
+                    <x>414</x>
+                    <y>205.00000000000003</y>
+                </point>
+                <element>item_6</element>
+                <loc>bottom</loc>
+                <type>block</type>
+            </arg>
+            <arg></arg>
+            <arg>
+                <_0>item_8</_0>
+            </arg>
+        </event>
+        <event id="10" type="addVariable" replayType="0" time="1647959144910" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>serverMessage</arg>
+            <arg>true</arg>
+        </event>
+        <event id="11" type="setField" replayType="0" time="1647959147631" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_8/0/</arg>
+            <arg>serverMessage</arg>
+            <arg></arg>
+        </event>
+        <event id="12" type="moveBlock" replayType="0" time="1647959168943" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_11" s="getLastMessage">&lt;/block>&lt;/script></arg>
+            <arg>item_8/1/</arg>
+            <arg></arg>
+            <arg>
+                <_0>item_11</_0>
+            </arg>
+        </event>
+        <event id="13" type="removeBlock" replayType="0" time="1647959175495" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_11</arg>
+            <arg>true</arg>
+            <arg>item_8/1/</arg>
+            <arg>&lt;script>&lt;block collabId="item_11" s="getLastMessage">&lt;/block>&lt;/script></arg>
+            <arg></arg>
+        </event>
+        <event id="14" type="addVariable" replayType="0" time="1647959201110" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>message</arg>
+            <arg>true</arg>
+        </event>
+        <event id="15" type="moveBlock" replayType="0" time="1647959204095" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_14" var="message"/>&lt;/script></arg>
+            <arg>item_8/1/</arg>
+            <arg></arg>
+            <arg>
+                <_0>item_14</_0>
+            </arg>
+        </event>
+        <event id="16" type="moveBlock" replayType="0" time="1647959208975" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_15" s="doSetVar">&lt;l>&lt;/l>&lt;l>0&lt;/l>&lt;/block>&lt;/script></arg>
+            <arg>
+                <point>
+                    <x>414</x>
+                    <y>227.00000000000003</y>
+                </point>
+                <element>item_8</element>
+                <loc>bottom</loc>
+                <type>block</type>
+            </arg>
+            <arg></arg>
+            <arg>
+                <_0>item_15</_0>
+            </arg>
+        </event>
+        <event id="17" type="setField" replayType="0" time="1647959210991" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_15/0/</arg>
+            <arg>serverMessage</arg>
+            <arg></arg>
+        </event>
+        <event id="18" type="moveBlock" replayType="0" time="1647959214887" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_17" var="message"/>&lt;/script></arg>
+            <arg>item_15/1/</arg>
+            <arg></arg>
+            <arg>
+                <_0>item_17</_0>
+            </arg>
+        </event>
+        <event id="19" type="moveBlock" replayType="0" time="1647959226047" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_18" s="doSayFor">&lt;l>Hello!&lt;/l>&lt;l>2&lt;/l>&lt;/block>&lt;/script></arg>
+            <arg>
+                <point>
+                    <x>414</x>
+                    <y>249.00000000000003</y>
+                </point>
+                <element>item_15</element>
+                <loc>bottom</loc>
+                <type>block</type>
+            </arg>
+            <arg></arg>
+            <arg>
+                <_0>item_18</_0>
+            </arg>
+        </event>
+        <event id="20" type="moveBlock" replayType="0" time="1647959230735" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_19" var="message"/>&lt;/script></arg>
+            <arg>item_18/0/</arg>
+            <arg></arg>
+            <arg>
+                <_0>item_19</_0>
+            </arg>
+        </event>
+        <event id="21" type="addBlock" replayType="0" time="1647959240801" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_20" s="receiveKey">&lt;l>&lt;option>space&lt;/option>&lt;/l>&lt;/block>&lt;/script></arg>
+            <arg>item_-1</arg>
+            <arg>200</arg>
+            <arg>178</arg>
+            <arg>
+                <_0>item_20</_0>
+            </arg>
+        </event>
+        <event id="22" type="setField" replayType="0" time="1647959244359" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_20/0/</arg>
+            <arg>
+                <_0>up arrow</_0>
+            </arg>
+            <arg>space</arg>
+        </event>
+        <event id="23" type="addBlock" replayType="0" time="1647959253215" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_22" s="doSocketRequest">&lt;l>&lt;/l>&lt;l>&lt;/l>&lt;/block>&lt;/script></arg>
+            <arg>item_-1</arg>
+            <arg>195</arg>
+            <arg>218</arg>
+            <arg>
+                <_0>item_22</_0>
+            </arg>
+        </event>
+        <event id="24" type="setBlockPosition" replayType="0" time="1647959254927" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_22</arg>
+            <arg>195</arg>
+            <arg>224</arg>
+            <arg>
+                <_0>item_22</_0>
+                <_1>195</_1>
+                <_2>218</_2>
+            </arg>
+        </event>
+        <event id="25" type="addBlock" replayType="0" time="1647959266448" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_24" s="doSocketRequest">&lt;l>&lt;/l>&lt;l>&lt;/l>&lt;/block>&lt;/script></arg>
+            <arg>item_-1</arg>
+            <arg>266</arg>
+            <arg>260.8333333333333</arg>
+            <arg>
+                <_0>item_24</_0>
+            </arg>
+        </event>
+        <event id="26" type="removeBlock" replayType="0" time="1647959268079" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_24</arg>
+            <arg>true</arg>
+            <arg>260.8333333333333</arg>
+            <arg>266</arg>
+            <arg>item_-1</arg>
+            <arg>&lt;script>&lt;block collabId="item_24" s="doSocketRequest">&lt;l>&lt;/l>&lt;l>&lt;/l>&lt;/block>&lt;/script></arg>
+            <arg></arg>
+        </event>
+        <event id="27" type="removeBlock" replayType="0" time="1647959270031" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_22</arg>
+            <arg>true</arg>
+            <arg>224</arg>
+            <arg>195</arg>
+            <arg>item_-1</arg>
+            <arg>&lt;script>&lt;block collabId="item_22" s="doSocketRequest">&lt;l>&lt;/l>&lt;l>&lt;/l>&lt;/block>&lt;/script></arg>
+            <arg></arg>
+        </event>
+        <event id="28" type="moveBlock" replayType="0" time="1647959274471" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_27" s="doSocketMessage">&lt;l>&lt;/l>&lt;l>&lt;/l>&lt;/block>&lt;/script></arg>
+            <arg>
+                <point>
+                    <x>417</x>
+                    <y>337.1666666666667</y>
+                </point>
+                <element>item_20</element>
+                <loc>bottom</loc>
+                <type>block</type>
+            </arg>
+            <arg></arg>
+            <arg>
+                <_0>item_27</_0>
+            </arg>
+        </event>
+        <event id="29" type="setField" replayType="0" time="1647959276935" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_27/0/</arg>
+            <arg>message and address</arg>
+            <arg></arg>
+        </event>
+        <event id="30" type="moveBlock" replayType="0" time="1647959285110" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_29" var="serverMessage"/>&lt;/script></arg>
+            <arg>item_27/1/</arg>
+            <arg></arg>
+            <arg>
+                <_0>item_29</_0>
+            </arg>
+        </event>
+        <event id="31" type="moveBlock" replayType="0" time="1647959289814" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_0</arg>
+            <arg>item_27/2/</arg>
+            <arg></arg>
+            <arg>
+                <_0>item_0</_0>
+                <_1>92</_1>
+                <_2>365</_2>
+            </arg>
+        </event>
+        <event id="32" type="moveBlock" replayType="0" time="1647959295215" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>&lt;script>&lt;block collabId="item_31" var="serverMessage"/>&lt;/script></arg>
+            <arg>item_27/3/</arg>
+            <arg></arg>
+            <arg>
+                <_0>item_31</_0>
+            </arg>
+        </event>
+        <event id="33" type="pressStart" replayType="0" time="1647959300334" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>false</arg>
+        </event>
+        <event id="33" type="startScript" replayType="0" time="1647959319914" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>item_20</arg>
+            <arg>true</arg>
+        </event>
+        <event id="33" type="startScript" replayType="0" time="1647959320752" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>item_20</arg>
+            <arg>true</arg>
+        </event>
+        <event id="33" type="moveBlock" replayType="0" time="1647959324086" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_0</arg>
+            <arg>item_27/2/</arg>
+            <arg></arg>
+            <arg>
+                <_0>item_0</_0>
+                <_1>item_27/2/</_1>
+            </arg>
+        </event>
+        <event id="34" type="setBlockPosition" replayType="0" time="1647959325950" user="_netsblox1647958157806" username="mlk22-1" isUserAction="false">
+            <arg>item_0</arg>
+            <arg>200</arg>
+            <arg>252</arg>
+            <arg>
+                <_0>item_0</_0>
+                <_1>item_27/2/</_1>
+            </arg>
+        </event>
+        <event id="35" type="startScript" replayType="0" time="1647959326791" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>item_0</arg>
+            <arg>true</arg>
+        </event>
+        <event id="35" type="selectTab" replayType="0" time="1647959338031" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>room</arg>
+            <arg>scripts</arg>
+        </event>
+        <event id="35" type="selectTab" replayType="0" time="1647959340078" user="_netsblox1647958157806" username="mlk22-1" isUserAction="true">
+            <arg>scripts</arg>
+            <arg>room</arg>
+        </event>
+    </replay>
+</project>

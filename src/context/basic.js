@@ -539,5 +539,17 @@ context.reportNumbers = function(start, end) {
     }
     return numbers;
 };
+// context.doSocketMessage = function() {
+//     const messageTypes = this.project.stage.messageTypes;
+//     let args = Array.prototype.slice.call(arguments, 0);
+//     let msgTypeName = args.shift();
 
+//     args.pop();  // remove the execution context
+//     const target = args.pop();
+
+//     const msgType = messageTypes.find(type => type.name === msgTypeName) || DEFAULT_MSG_TYPE;
+//     const contents = {};
+//     msgType.fields.forEach((name, i) => contents[name] = args[i]);
+//     this.project.ctx.socket.sendMessageTo(target, msgType.name, contents);
+// };
 module.exports = context;
