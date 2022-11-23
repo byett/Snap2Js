@@ -40,6 +40,12 @@ class Stage {
     onFlagPressed() {
     }
 
+    onUserMessageReceived() {
+    }
+
+    onKeyPressed() {
+    }
+
     onUserEventReceived (event) {
     }
 
@@ -193,6 +199,7 @@ sprite.variables.set(<%= variable %>, <%= rawSprite.variables[variable] %>);<% }
 
 sprite.onFlagPressed = function() {
     var self = this;
+    console.log("onFlagPressed:");
 <%
 (rawSprite.scripts.receiveGo || [])
     .forEach(function(code, i) {
@@ -213,6 +220,7 @@ sprite.onFlagPressed = function() {
 
 sprite.onKeyPressed = function(key) {
     var self = this;
+    console.log("onKeyPress:");
 <%
 (rawSprite.scripts.receiveKey || [])
     .forEach(function(code) {
@@ -238,6 +246,28 @@ sprite.onUserEventReceived = function(event) {
     return Promise.all([
 <%
 (rawSprite.scripts.receiveMessage || [])
+    .forEach(function(_, i) {
+%>handler_<%=i%>,
+<%
+    });
+%>    ]);
+};
+
+sprite.onUserMessageReceived = function(event) {
+    var self = this;
+    console.log("onUserMessageReceived:");
+
+<%
+(rawSprite.scripts.receiveSocketMessage || [])
+    .forEach(function(code, i) {
+%>
+    const handler_<%= i %> = <%= code %>
+<%
+});
+%>
+    return Promise.all([
+<%
+(rawSprite.scripts.receiveSocketMessage || [])
     .forEach(function(_, i) {
 %>handler_<%=i%>,
 <%
@@ -291,5 +321,5 @@ project.customBlocks.set(<%= def.name %>, <%= def.code %>);
   if (returnValue) { %>
 return <%= returnValue %>;
 <% } else { %>
-return Promise.all(project.sprites.concat(project.stage).map(sprite => sprite.onFlagPressed()));
+return [Promise.all(project.sprites.concat(project.stage).map(sprite => sprite.onFlagPressed())), Promise.all(project.sprites.concat(project.stage).map(sprite => sprite.onKeyPressed())), Promise.all(project.sprites.concat(project.stage).map(sprite => sprite.onUserMessageReceived()))];
 <% } %>

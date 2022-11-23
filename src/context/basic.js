@@ -490,6 +490,8 @@ context.variable = function(name, context) {
 
 context.doSetVar = function(name, val, context) {
     var variable = context.get(name);
+    console.log('name:',name);
+    console.log('val:', val);
     variable.value = val;
 };
 
@@ -539,17 +541,18 @@ context.reportNumbers = function(start, end) {
     }
     return numbers;
 };
-// context.doSocketMessage = function() {
-//     const messageTypes = this.project.stage.messageTypes;
-//     let args = Array.prototype.slice.call(arguments, 0);
-//     let msgTypeName = args.shift();
+context.doSocketMessage = function(name) {
+    const messageTypes = this.project.stage.messageTypes;
+    let args = Array.prototype.slice.call(arguments, 0);
+    let msgTypeName = args.shift();
 
-//     args.pop();  // remove the execution context
-//     const target = args.pop();
+    args.pop();  // remove the execution context
+    const target = args.pop();
 
-//     const msgType = messageTypes.find(type => type.name === msgTypeName) || DEFAULT_MSG_TYPE;
-//     const contents = {};
-//     msgType.fields.forEach((name, i) => contents[name] = args[i]);
-//     this.project.ctx.socket.sendMessageTo(target, msgType.name, contents);
-// };
+    const msgType = messageTypes.find(type => type.name === msgTypeName) || DEFAULT_MSG_TYPE;
+    const contents = {};
+    msgType.fields.forEach((name, i) => contents[name] = args[i]);
+    this.project.ctx.socket.sendMessageTo(target, msgType.name, contents);
+    console.log(name);
+};
 module.exports = context;

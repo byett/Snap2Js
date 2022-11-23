@@ -276,6 +276,16 @@ backend.reportTouchingColor = function(node) {
     return callFnWithArgs(node.type, color);
 };
 
+backend.reportUnicode = function(node) {
+    const uni = node.first().code(this);
+    return callFnWithArgs(node.type, uni);
+};
+
+backend.reportUnicodeAsLetter = function(node) {
+    const letter = node.first().code(this);
+    return callFnWithArgs(node.type, letter);
+};
+
 backend.reportDate =
 backend.reportURL =
 backend.reportGet = function(node) {
@@ -776,6 +786,15 @@ backend.eventHandlers.receiveKey = function(node, code) {
     ].join('\n');
 };
 
+backend.eventHandlers.receiveSocketMessage = function(node, code) {
+    return [
+        '(async function() {',
+        'let DEFAULT_CONTEXT = new VariableFrame(self.variables);',
+        indent(code),
+        '})();'
+    ].join('\n');
+};
+
 // Add support for the new block types
 backend.doRunRPC =
 backend.getJSFromRPCDropdown =
@@ -787,7 +806,7 @@ backend.doSocketMessage = function(node) {
     let args = node.inputsAsCode(this);
 
     args.unshift(node.type);
-    return callStatementWithArgs.apply(null, args);
+    return callStatementWithArgs.apply(node.type, args);
 };
 
 backend.doSocketResponse =  // ignore the argument since this isn't supported

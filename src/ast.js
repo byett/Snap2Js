@@ -714,6 +714,7 @@ const DEFAULT_INPUTS = {
     doBroadcastAndWait: () => [new EmptyString()],
     doWaitUntil: () => [new False()],
     doSocketMessage: () => [new List(), new Block(),new Block()],
+    doSetVar: () => [new EmptyString(), new EmptyString()],
 };
 const DEFAULT_INPUT = {
     list: index => new EmptyString(),

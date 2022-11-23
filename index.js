@@ -283,7 +283,8 @@
 
         if (this.parse[type]) {
             return this.parse[type].call(this, element);
-        } else {
+        } 
+        else {
             throw new Error(`Unsupported xml type: ${type}`);
         }
     };
@@ -306,6 +307,19 @@
         this.state.customBlocks = blocks.map(block => this.parseBlockDefinition(block));
 
         const stage = element.childNamed('stage');
+        // const stage = element.child.child.childNamed('stage');
+        this.parse(stage);
+    };
+
+    Snap2Js.parse.room = function(element) {
+        const globalVars = this.parseInitialVariables(element.childNamed('role').childNamed('project').childNamed('variables').children);
+        const blocks = element.childNamed('role').childNamed('project').childNamed('blocks').children;
+
+        this.state.variables = globalVars;
+        this.state.customBlocks = blocks.map(block => this.parseBlockDefinition(block));
+
+        // const stage = element.childNamed('stage');
+        const stage = element.childNamed('role').childNamed('project').childNamed('stage');
         this.parse(stage);
     };
 
